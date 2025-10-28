@@ -3,20 +3,7 @@ services:
     name: remark42
     env: docker
     plan: free
-    region: Oregon (US West)  # 选你数据库所在区域
     envVars:
-      - key: REMARK_URL
-        value: https://your-domain.onrender.com
-      - key: REMARK_SITE
-        value: your-site-id
-      - key: REMARK_ADMIN_SHARED_ID
-        value: admin@example.com
-      - key: REMARK_AUTH_GITHUB_CID
-        sync: false
-      - key: REMARK_AUTH_GITHUB_CSEC
-        sync: false
-      - key: REMARK_STORE_BOLT_PATH
-        value: /srv/var/db
       - key: REMARK_DB_TYPE
         value: postgres
       - key: REMARK_DB_DSN
@@ -25,5 +12,5 @@ services:
           property: connectionString
     disk:
       name: data
-      mountPath: /srv/var/db
+      mountPath: /srv/var
       sizeGB: 1
